@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp8.View.WindowOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp8.View"
+        mc:Ignorable="d"
+        Title="Поручения" Height="450" Width="790">
+    <Grid>
+        <StackPanel Background="#FEF2E4">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnAdd" Margin="10,10,5,10" Content="Добавить" Height="30" Width="100" Click="btnAdd_Click" Background="#FEF2E4"/>
+                <Button x:Name="btnEdit" Margin="10,10,5,10" Content="Редактировать" Height="30" Width="100" Click="btnEdit_Click" Background="#FEF2E4"/>
+                <Button x:Name="btnDelete" Margin="10,10,5,10" Content="Удалить" Height="30" Width="100" Click="btnDelete_Click" Background="#FEF2E4"/>
+            </StackPanel>
+            <ListView x:Name="lvOrder">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Код" Width="50" DisplayMemberBinding="{Binding ID}"/>
+                            <GridViewColumn Header="Тип сделки" DisplayMemberBinding="{Binding OrderType}"/>
+                            <GridViewColumn Header="Вид  сделки" DisplayMemberBinding="{Binding OrderVeriety}"/>
+                            <GridViewColumn Header="Валюта" DisplayMemberBinding="{Binding Currency}"/>
+                            <GridViewColumn Header="Тикер ценной бумаги" DisplayMemberBinding="{Binding Tiker}"/>
+                            <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Count}"/>
+                            <GridViewColumn Header="Номер поручения" DisplayMemberBinding="{Binding Number}"/>
+                            <GridViewColumn Header="Дата получения поручения" DisplayMemberBinding="{Binding Data, StringFormat={}{0:dd\.}{0:MM\.}{0:yyyy}}"/>
+                            <GridViewColumn Header="Срок действия" DisplayMemberBinding="{Binding Duration, StringFormat={}{0:dd\.}{0:MM\.}{0:yyyy}}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
